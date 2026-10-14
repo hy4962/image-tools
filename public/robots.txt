@@ -10,4 +10,4 @@ Allow: /meta.jpg
 Allow: /site.webmanifest
 Allow: /sitemap.xml
 
-Sitemap: https://img.1day.vip/sitemap.xml
+Sitemap: https://img.9ll.uk/sitemap.xml

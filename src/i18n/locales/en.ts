@@ -46,9 +46,9 @@ export const en = {
   switchTo: '中文',
   switchToAria: 'Switch to Chinese',
 
-  // 页脚（外链）
+  // 页脚（外链，指向本站站长的博客）
   footerBefore: '© 2026 · Free Online Image Tools | Powered by ',
-  footerLink: 'Image Tools',
+  footerLink: 'HY',
   footerAfter: '',
 
   // 博客入口卡片（按当前语言指向 /blog/ 或 /en/blog/）

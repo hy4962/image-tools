@@ -47,9 +47,9 @@ export const zhCN: Translation = {
   switchTo: 'English',
   switchToAria: '切换到英文',
 
-  // 页脚（外链）
+  // 页脚（外链，指向本站站长的博客）
   footerBefore: '© 2026 · 免费在线图片处理｜由 ',
-  footerLink: '无辣',
+  footerLink: 'HY',
   footerAfter: ' 提供',
 
   // 博客入口卡片（按当前语言指向 /blog/ 或 /en/blog/）

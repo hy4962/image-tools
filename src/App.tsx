@@ -204,7 +204,7 @@ export function App() {
           </div>
           <span>{t.footerBefore}</span>
           <a
-            href="https://blog.1day.vip/"
+            href="https://www.9ll.uk/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline dark:text-blue-400"

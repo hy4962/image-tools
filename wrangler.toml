@@ -1,11 +1,20 @@
-# Cloudflare Pages 配置。
+# Cloudflare Workers 配置（Workers 静态资源托管）。
 #
 # 站内没有任何服务端代码：压缩走浏览器端的 WASM 编解码器，
-# 放大走浏览器端的 ONNX Runtime（WebGPU / WASM），因此只发布静态资源，
-# 在 Cloudflare 上这部分不计费。
+# 放大 / 抠图走浏览器端的 ONNX Runtime（WebGPU / WASM），因此只发布静态资源，
+# 静态资源请求在 Cloudflare 上不计费。
 #
-# 跨域隔离所需的 COOP / COEP 响应头由 public/_headers 声明，构建后
-# 会随 dist/ 一起上传 —— Pages 原生支持该文件。
+# 上游默认发布到 Cloudflare Pages（用 pages_build_output_dir）。此 fork 改为
+# Workers 静态资源：`npx wrangler deploy` 读取下面的 [assets] 直接上传 dist/。
+#
+# 跨域隔离所需的 COOP / COEP 响应头由 public/_headers 声明，构建后会随 dist/
+# 一起上传 —— Workers 静态资源原生支持 _headers 文件。
 name = "image-tools"
-pages_build_output_dir = "./dist"
 compatibility_date = "2026-09-21"
+
+[assets]
+# 构建产物目录（npm run build 输出到 dist/）。
+directory = "./dist"
+# MPA：目录请求由默认的 auto-trailing-slash 规则命中各自的 index.html。
+# 未命中的路径返回 404；若将来在 public/ 放一个 404.html，这里会自动使用它。
+not_found_handling = "404-page"

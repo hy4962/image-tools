@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=image-tools"
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@jsquash/avif": "^1.1.0",

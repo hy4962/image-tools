@@ -45,6 +45,10 @@ export const zhCN: Translation = {
   compressCompareHint: '按住拖动，对比压缩前后的细节',
   compressCompareTitle: (name: string) => `对比预览 · ${name}`,
   compressCompareClose: '关闭对比',
+  compressZoomIn: '放大',
+  compressZoomOut: '缩小',
+  compressZoomFit: '适应窗口',
+  compressCompareZoomHint: '拖动画布平移 · 拖动竖线切换对比 · 滚轮缩放',
 
   // 批量
   clearAll: '全部清除',

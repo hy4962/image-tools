@@ -43,6 +43,10 @@ export const en = {
   compressCompareHint: 'Drag to compare the detail before and after compression',
   compressCompareTitle: (name: string) => `Comparison · ${name}`,
   compressCompareClose: 'Close comparison',
+  compressZoomIn: 'Zoom in',
+  compressZoomOut: 'Zoom out',
+  compressZoomFit: 'Fit to window',
+  compressCompareZoomHint: 'Drag the image to pan · drag the handle to compare · scroll to zoom',
 
   // 批量
   clearAll: 'Clear All',

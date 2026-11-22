@@ -69,6 +69,9 @@ export const en = {
     'Practical tips on compressing, converting, and enlarging images — AVIF, WebP, JPEG, PNG, JPEG XL, and AI upscaling.',
   blogCardCta: 'Read the blog',
 
+  // 顶部推广条（中英文保持同一条原文）
+  promoBanner: '稳定低价不掺水token: sukiai.cn',
+
   // 顶部导航的图标链接（文档站与 GitHub 仓库）
   docsLink: 'Docs',
   docsLinkAria: 'Read the documentation',

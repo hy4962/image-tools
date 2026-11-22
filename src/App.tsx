@@ -82,6 +82,15 @@ export function App() {
 
   return (
     <div className="min-h-dvh bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+      <a
+        href="https://sukiai.cn"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 px-4 py-2 text-center text-sm font-semibold tracking-wide text-white shadow-sm transition hover:from-blue-700 hover:via-indigo-700 hover:to-blue-700"
+      >
+        {t.promoBanner}
+      </a>
+
       <header className="sticky top-0 z-10 border-b border-neutral-200 bg-white/85 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/85">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-4 gap-y-3 px-4 py-3 sm:px-6">
           <div className="flex items-center gap-2.5">

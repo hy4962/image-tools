@@ -70,6 +70,9 @@ export const zhCN: Translation = {
     '关于图片压缩、格式转换与放大的实用技巧 —— AVIF、WebP、JPEG、PNG、JPEG XL 与 AI 超分辨率。',
   blogCardCta: '阅读博客',
 
+  // 顶部推广条
+  promoBanner: '稳定低价不掺水token: sukiai.cn',
+
   // 顶部导航的图标链接（文档站与 GitHub 仓库）
   docsLink: '文档',
   docsLinkAria: '查看使用文档',

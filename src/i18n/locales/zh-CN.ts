@@ -38,6 +38,14 @@ export const zhCN: Translation = {
   remove: '移除',
   smaller: (pct: number) => `缩小 ${pct}%`,
 
+  // 压缩前后对比
+  compressCompare: '对比',
+  compressBefore: '原图',
+  compressAfter: '压缩后',
+  compressCompareHint: '按住拖动，对比压缩前后的细节',
+  compressCompareTitle: (name: string) => `对比预览 · ${name}`,
+  compressCompareClose: '关闭对比',
+
   // 批量
   clearAll: '全部清除',
   downloadAll: '下载全部',

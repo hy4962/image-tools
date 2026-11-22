@@ -1,4 +1,4 @@
-import { X, CheckCircle, AlertCircle, Loader2, Download } from 'lucide-react';
+import { X, CheckCircle, AlertCircle, Loader2, Download, Columns2 } from 'lucide-react';
 import type { ImageFile } from '../types';
 import { formatFileSize } from '../utils/imageProcessing';
 import { downloadImage } from '../utils/download';
@@ -7,9 +7,10 @@ import { useTranslation } from '../i18n';
 interface ImageListProps {
   images: ImageFile[];
   onRemove: (id: string) => void;
+  onCompare: (image: ImageFile) => void;
 }
 
-export function ImageList({ images, onRemove }: ImageListProps) {
+export function ImageList({ images, onRemove, onCompare }: ImageListProps) {
   const { t } = useTranslation();
 
   if (images.length === 0) return null;
@@ -34,6 +35,16 @@ export function ImageList({ images, onRemove }: ImageListProps) {
                 {image.file.name}
               </p>
               <div className="flex flex-shrink-0 items-center gap-2">
+                {image.status === 'complete' && image.blob && (
+                  <button
+                    onClick={() => onCompare(image)}
+                    className="text-neutral-400 transition-colors hover:text-blue-600"
+                    title={t.compressCompare}
+                    aria-label={t.compressCompare}
+                  >
+                    <Columns2 className="h-5 w-5" />
+                  </button>
+                )}
                 {image.status === 'complete' && (
                   <button
                     onClick={() => downloadImage(image)}

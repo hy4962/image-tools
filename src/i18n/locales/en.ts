@@ -36,6 +36,14 @@ export const en = {
   remove: 'Remove',
   smaller: (pct: number) => `${pct}% smaller`,
 
+  // 压缩前后对比
+  compressCompare: 'Compare',
+  compressBefore: 'Original',
+  compressAfter: 'Compressed',
+  compressCompareHint: 'Drag to compare the detail before and after compression',
+  compressCompareTitle: (name: string) => `Comparison · ${name}`,
+  compressCompareClose: 'Close comparison',
+
   // 批量
   clearAll: 'Clear All',
   downloadAll: 'Download All',

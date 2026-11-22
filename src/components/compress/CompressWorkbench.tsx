@@ -8,6 +8,7 @@ import type {
   OutputType,
 } from '../../types'
 import { DEFAULT_QUALITY_SETTINGS } from '../../utils/formatDefaults'
+import { CompressCompareModal } from './CompressCompareModal'
 import { CompressionOptions } from '../CompressionOptions'
 import { DownloadAll } from '../DownloadAll'
 import { DropZone } from '../DropZone'
@@ -20,6 +21,7 @@ export function CompressWorkbench() {
   const { t } = useTranslation()
   const [images, setImages] = useState<ImageFile[]>([])
   const [outputType, setOutputType] = useState<OutputType>('webp')
+  const [compareId, setCompareId] = useState<string | null>(null)
   const [options, setOptions] = useState<CompressionOptionsType>({
     quality: DEFAULT_QUALITY_SETTINGS.webp,
   })
@@ -81,7 +83,10 @@ export function CompressWorkbench() {
     }
   }, [images])
 
+  const closeCompare = useCallback(() => setCompareId(null), [])
   const completedImages = images.filter((img) => img.status === 'complete').length
+  // 按 id 反查而不是存整份 image：列表里这张图被移除时弹窗会自己消失
+  const compareImage = images.find((img) => img.id === compareId) ?? null
 
   return (
     <div className="space-y-6">
@@ -98,7 +103,15 @@ export function CompressWorkbench() {
         <DownloadAll onDownloadAll={handleDownloadAll} count={completedImages} />
       )}
 
-      <ImageList images={images} onRemove={handleRemoveImage} />
+      <ImageList
+        images={images}
+        onRemove={handleRemoveImage}
+        onCompare={(image) => setCompareId(image.id)}
+      />
+
+      {compareImage?.status === 'complete' && compareImage.blob && (
+        <CompressCompareModal image={compareImage} onClose={closeCompare} />
+      )}
 
       {images.length > 0 && (
         <button
